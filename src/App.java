@@ -10,21 +10,20 @@ public class App {
 
         Scanner leer = new Scanner(System.in);
 
-        try {
+        do {
 
-            do {
-                
+            try {
                 System.out.println("Ingrese tres numeros enteros diferentes");
                 num1 = leer.nextInt();
                 num2 = leer.nextInt();
                 num3 = leer.nextInt();
+            } catch (Exception e) {
+                System.out.println(e);
+                System.out.println("Ingrese valores correctos");
+                leer.nextLine();
+            }
 
-            } while (num1==num2 || num1==num3 || num2==num3);
-
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("Ingrese valores correctos");
-        }
+        } while (num1 == num2 || num1 == num3 || num2 == num3);
 
     }
 }
